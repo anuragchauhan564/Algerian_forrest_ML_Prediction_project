@@ -1,0 +1,69 @@
+<html>
+<body style="background-color:lightyellow;" >
+    <div class="login">
+      <center>
+      <h1>Machine Learning Projects</h1>
+      <h3>Multiple linear regression</h3>
+      </center>
+      <h3>Independent Featurs are:</h3>
+      <h4>1.Temperature in celsius degrees<br>
+         2.RH :- Relative Humidity (in per) <br>
+         3.Ws :- Wind Speed in km/h <br>
+         4. Rain :- total rain in a day in mm <br>
+         5. FFMC :- Fine Fuel Moisture Code index<br>
+         6. DMC :- Duff Moisture Code index <br>
+         7. ISI :- Initial Spread Index <br>
+         8. Classes :- two classes namely Fire - 1 and not fire - 0<br>
+         9. Region  :- there are two region 0 and 1
+      <h4>   
+      <center>
+       <h2>FWI Prediction</h2>
+        <!-- Main Input For Receiving Query to our ML -->
+       <form action="{{ url_for('predict_datapoints')}}" method="post">
+         <table style="background-color:Tomato">
+            <tr>
+               <th>Temperature</th>
+               <td><input type="text" name="Temperature" placeholder="Temperature" required="required" /><br></td>
+            </tr>
+            <tr> 
+               <th>RH</th>
+               <td><input type="text" name="RH" placeholder="RH" required="required" /><br></td>
+            </tr>
+            <tr>
+               <th>Ws</th>
+               <td><input type="text" name="Ws" placeholder="Ws" required="required" /><br></td>
+            </tr>
+            <tr>
+               <th>Rain</th>
+               <td><input type="text" name="Rain" placeholder="Rain" required="required" /><br></td>
+            </td>
+            <tr>
+               <th>FFMC</th>
+               <td><input type="text" name="FFMC" placeholder="FFMC" required="required" /><br></td>
+            </tr>
+            <tr>
+               <th>DMC</th>
+               <td><input type="text" name="DMC" placeholder="DMC" required="required" /><br></td>
+            </tr>
+            <tr>
+               <th>ISI</th>
+               <td><input type="text" name="ISI" placeholder="ISI" required="required" /><br></td>
+            </tr>
+            <tr>
+               <th>Classes</th>
+               <td><input type="text" name="Classes" placeholder="Classes" required="required" /><br></td>
+            </tr>
+            <tr>
+               <th>Region</th>
+               <td><input type="text" name="Region" placeholder="Region" required="required" /><br></td>
+            </tr>
+         </table>
+            <br>
+            <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+       </form>
+    <h2>
+       The FWI prediction is {{result}}
+    </h2>
+   </center>
+   <body>
+</html>
